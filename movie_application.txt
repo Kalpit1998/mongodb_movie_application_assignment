@@ -1,0 +1,1145 @@
+> use assignment
+switched to db assignment
+***************************************************************************************************
+
+> db.movies.find().count()
+500
+***************************************************************************************************
+
+> db.movies.find({movie_name: {$eq: "Hero"}}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425b5"),
+        "id" : 20,
+        "movie_name" : "Hero",
+        "movie_genre" : "Drama",
+        "production_year" : 1991,
+        "budget" : 19144
+}
+***************************************************************************************************
+
+> db.movies.find({"movie_name": {$ne: "Hero"}}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425a2"),
+        "id" : 1,
+        "movie_name" : "Vivacious Lady",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 12609
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a3"),
+        "id" : 2,
+        "movie_name" : "Fever",
+        "movie_genre" : "Thriller",
+        "production_year" : 2019,
+        "budget" : 11114
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a4"),
+        "id" : 3,
+        "movie_name" : "Last Run, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2016,
+        "budget" : 14924
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a5"),
+        "id" : 4,
+        "movie_name" : "Before the Fall (NaPolA - Elite für den Führer)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2012,
+        "budget" : 18305
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a6"),
+        "id" : 5,
+        "movie_name" : "Guerrilla: The Taking of Patty Hearst",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 19675
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a7"),
+        "id" : 6,
+        "movie_name" : "Latin Music USA",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 1996,
+        "budget" : 13198
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a8"),
+        "id" : 7,
+        "movie_name" : "Hot Millions",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 15322
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a9"),
+        "id" : 8,
+        "movie_name" : "Hundred and One Nights, A (Cent et une nuits de Simon Cinéma, Les)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 13080
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425aa"),
+        "id" : 9,
+        "movie_name" : "Monsieur Vincent",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 9110
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ab"),
+        "id" : 10,
+        "movie_name" : "Superman and the Mole-Men",
+        "movie_genre" : "Children|Mystery|Sci-Fi",
+        "production_year" : 2011,
+        "budget" : 12147
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ac"),
+        "id" : 11,
+        "movie_name" : "Public Housing",
+        "movie_genre" : "Documentary",
+        "production_year" : 1991,
+        "budget" : 13333
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ad"),
+        "id" : 12,
+        "movie_name" : "Submarine",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 1997,
+        "budget" : 14053
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ae"),
+        "id" : 13,
+        "movie_name" : "Jesse Stone: Stone Cold",
+        "movie_genre" : "Crime|Drama|Mystery",
+        "production_year" : 1994,
+        "budget" : 13462
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425af"),
+        "id" : 14,
+        "movie_name" : "Love and a Bullet",
+        "movie_genre" : "Action|Crime",
+        "production_year" : 2018,
+        "budget" : 11066
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b0"),
+        "id" : 15,
+        "movie_name" : "Critical Care",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 17892
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b1"),
+        "id" : 16,
+        "movie_name" : "Solas",
+        "movie_genre" : "Drama",
+        "production_year" : 1991,
+        "budget" : 12670
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b2"),
+        "id" : 17,
+        "movie_name" : "King of California",
+        "movie_genre" : "Comedy",
+        "production_year" : 2015,
+        "budget" : 18016
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b3"),
+        "id" : 18,
+        "movie_name" : "1981",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 9047
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b4"),
+        "id" : 19,
+        "movie_name" : "Up!",
+        "movie_genre" : "Comedy",
+        "production_year" : 1990,
+        "budget" : 15460
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b6"),
+        "id" : 21,
+        "movie_name" : "Parineeta",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 1994,
+        "budget" : 19209
+}
+Type "it" for more
+***************************************************************************************************
+
+ db.movies.find({$and :[{budget : {$gt : 9000}}, {budget : {$gte : 9000}}]}).sort({movie_name: 1, movie_genre:1}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b44272b"),
+        "id" : 394,
+        "movie_name" : "+1",
+        "movie_genre" : "Sci-Fi|Thriller",
+        "production_year" : 2000,
+        "budget" : 12120
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426e1"),
+        "id" : 320,
+        "movie_name" : "100 Bloody Acres",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2007,
+        "budget" : 10362
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ee"),
+        "id" : 77,
+        "movie_name" : "15",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 2009,
+        "budget" : 11554
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b3"),
+        "id" : 18,
+        "movie_name" : "1981",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 9047
+}
+{
+        "_id" : ObjectId("619ce428189328025b442722"),
+        "id" : 385,
+        "movie_name" : "3 Extremes (Three... Extremes) (Saam gaang yi)",
+        "movie_genre" : "Horror",
+        "production_year" : 2013,
+        "budget" : 17837
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ce"),
+        "id" : 45,
+        "movie_name" : "36th Chamber of Shaolin, The (Shao Lin san shi liu fang) (Master Killer)",
+        "movie_genre" : "Action|Adventure",
+        "production_year" : 2007,
+        "budget" : 11649
+}
+{
+        "_id" : ObjectId("619ce428189328025b442770"),
+        "id" : 463,
+        "movie_name" : "40 Pounds of Trouble",
+        "movie_genre" : "Comedy",
+        "production_year" : 2008,
+        "budget" : 14869
+}
+{
+        "_id" : ObjectId("619ce428189328025b44260f"),
+        "id" : 110,
+        "movie_name" : "88 Minutes",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 1992,
+        "budget" : 15074
+}
+{
+        "_id" : ObjectId("619ce428189328025b442741"),
+        "id" : 416,
+        "movie_name" : "Across the Line: The Exodus of Charlie Wright",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1996,
+        "budget" : 19531
+}
+{
+        "_id" : ObjectId("619ce428189328025b442726"),
+        "id" : 389,
+        "movie_name" : "Actresses (Actrices)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1993,
+        "budget" : 10933
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425f7"),
+        "id" : 86,
+        "movie_name" : "Advanced Style",
+        "movie_genre" : "Comedy|Documentary|Drama",
+        "production_year" : 2001,
+        "budget" : 19043
+}
+{
+        "_id" : ObjectId("619ce428189328025b442646"),
+        "id" : 165,
+        "movie_name" : "Agent Red",
+        "movie_genre" : "Action",
+        "production_year" : 2017,
+        "budget" : 18943
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425de"),
+        "id" : 61,
+        "movie_name" : "Alice (Neco z Alenky)",
+        "movie_genre" : "Animation|Fantasy|Mystery",
+        "production_year" : 2005,
+        "budget" : 15745
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425e5"),
+        "id" : 68,
+        "movie_name" : "All American Chump",
+        "movie_genre" : "Comedy",
+        "production_year" : 1997,
+        "budget" : 12583
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426fa"),
+        "id" : 345,
+        "movie_name" : "All Mine to Give",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2000,
+        "budget" : 12002
+}
+{
+        "_id" : ObjectId("619ce428189328025b442653"),
+        "id" : 178,
+        "movie_name" : "Allotment Wives",
+        "movie_genre" : "Crime|Drama|Film-Noir",
+        "production_year" : 1999,
+        "budget" : 12423
+}
+{
+        "_id" : ObjectId("619ce428189328025b442601"),
+        "id" : 96,
+        "movie_name" : "Ambition",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2013,
+        "budget" : 9898
+}
+{
+        "_id" : ObjectId("619ce428189328025b44275a"),
+        "id" : 441,
+        "movie_name" : "American Dreamz",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1997,
+        "budget" : 15889
+}
+{
+        "_id" : ObjectId("619ce428189328025b442629"),
+        "id" : 136,
+        "movie_name" : "American Hustle",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1990,
+        "budget" : 19526
+}
+{
+        "_id" : ObjectId("619ce428189328025b442677"),
+        "id" : 214,
+        "movie_name" : "American Pie Presents: The Book of Love (American Pie 7: The Book of Love)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2015,
+        "budget" : 14039
+}
+Type "it" for more
+***************************************************************************************************
+
+> db.movies.find({$and : [{production_year: {$gt: 2000}},{budget: {$gt : 10000}}]}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425a3"),
+        "id" : 2,
+        "movie_name" : "Fever",
+        "movie_genre" : "Thriller",
+        "production_year" : 2019,
+        "budget" : 11114
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a4"),
+        "id" : 3,
+        "movie_name" : "Last Run, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2016,
+        "budget" : 14924
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a5"),
+        "id" : 4,
+        "movie_name" : "Before the Fall (NaPolA - Elite für den Führer)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2012,
+        "budget" : 18305
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a6"),
+        "id" : 5,
+        "movie_name" : "Guerrilla: The Taking of Patty Hearst",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 19675
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a8"),
+        "id" : 7,
+        "movie_name" : "Hot Millions",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 15322
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a9"),
+        "id" : 8,
+        "movie_name" : "Hundred and One Nights, A (Cent et une nuits de Simon Cinéma, Les)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 13080
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ab"),
+        "id" : 10,
+        "movie_name" : "Superman and the Mole-Men",
+        "movie_genre" : "Children|Mystery|Sci-Fi",
+        "production_year" : 2011,
+        "budget" : 12147
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425af"),
+        "id" : 14,
+        "movie_name" : "Love and a Bullet",
+        "movie_genre" : "Action|Crime",
+        "production_year" : 2018,
+        "budget" : 11066
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b0"),
+        "id" : 15,
+        "movie_name" : "Critical Care",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 17892
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b2"),
+        "id" : 17,
+        "movie_name" : "King of California",
+        "movie_genre" : "Comedy",
+        "production_year" : 2015,
+        "budget" : 18016
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b9"),
+        "id" : 24,
+        "movie_name" : "Mother (Madeo)",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 17776
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425be"),
+        "id" : 29,
+        "movie_name" : "Drunks",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18817
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c0"),
+        "id" : 31,
+        "movie_name" : "No Rest for the Brave (Pas de repos pour les braves)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2013,
+        "budget" : 16878
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c1"),
+        "id" : 32,
+        "movie_name" : "Girls About Town",
+        "movie_genre" : "Comedy",
+        "production_year" : 2017,
+        "budget" : 11180
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c2"),
+        "id" : 33,
+        "movie_name" : "Let the Right One In (Låt den rätte komma in)",
+        "movie_genre" : "Drama|Fantasy|Horror|Romance",
+        "production_year" : 2002,
+        "budget" : 11432
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c3"),
+        "id" : 34,
+        "movie_name" : "Samaritan Zatoichi (Zatôichi kenka-daiko) (Zatôichi 19)",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 2004,
+        "budget" : 15797
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c4"),
+        "id" : 35,
+        "movie_name" : "Two Brothers (Deux frères)",
+        "movie_genre" : "Adventure|Children|Drama",
+        "production_year" : 2005,
+        "budget" : 14419
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c5"),
+        "id" : 36,
+        "movie_name" : "Last Casino, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2006,
+        "budget" : 16412
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425cb"),
+        "id" : 42,
+        "movie_name" : "Naked Civil Servant, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2003,
+        "budget" : 11426
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425cc"),
+        "id" : 43,
+        "movie_name" : "Failure to Launch",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2004,
+        "budget" : 13714
+}
+Type "it" for more
+***************************************************************************************************
+
+> db.movies.find({$and : [{production_year : {$gte : 2000}},{production_year : {$lte : 2010}}]}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425a9"),
+        "id" : 8,
+        "movie_name" : "Hundred and One Nights, A (Cent et une nuits de Simon Cinéma, Les)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 13080
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425aa"),
+        "id" : 9,
+        "movie_name" : "Monsieur Vincent",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 9110
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b0"),
+        "id" : 15,
+        "movie_name" : "Critical Care",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 17892
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b3"),
+        "id" : 18,
+        "movie_name" : "1981",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 9047
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b9"),
+        "id" : 24,
+        "movie_name" : "Mother (Madeo)",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 17776
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425be"),
+        "id" : 29,
+        "movie_name" : "Drunks",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18817
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c2"),
+        "id" : 33,
+        "movie_name" : "Let the Right One In (Låt den rätte komma in)",
+        "movie_genre" : "Drama|Fantasy|Horror|Romance",
+        "production_year" : 2002,
+        "budget" : 11432
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c3"),
+        "id" : 34,
+        "movie_name" : "Samaritan Zatoichi (Zatôichi kenka-daiko) (Zatôichi 19)",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 2004,
+        "budget" : 15797
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c4"),
+        "id" : 35,
+        "movie_name" : "Two Brothers (Deux frères)",
+        "movie_genre" : "Adventure|Children|Drama",
+        "production_year" : 2005,
+        "budget" : 14419
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425c5"),
+        "id" : 36,
+        "movie_name" : "Last Casino, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2006,
+        "budget" : 16412
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425cb"),
+        "id" : 42,
+        "movie_name" : "Naked Civil Servant, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2003,
+        "budget" : 11426
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425cc"),
+        "id" : 43,
+        "movie_name" : "Failure to Launch",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2004,
+        "budget" : 13714
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ce"),
+        "id" : 45,
+        "movie_name" : "36th Chamber of Shaolin, The (Shao Lin san shi liu fang) (Master Killer)",
+        "movie_genre" : "Action|Adventure",
+        "production_year" : 2007,
+        "budget" : 11649
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425d4"),
+        "id" : 51,
+        "movie_name" : "Korengal",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 2003,
+        "budget" : 16499
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425d9"),
+        "id" : 56,
+        "movie_name" : "Last Sunset, The",
+        "movie_genre" : "Western",
+        "production_year" : 2005,
+        "budget" : 17530
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425da"),
+        "id" : 57,
+        "movie_name" : "Big Circus, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 17175
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425dc"),
+        "id" : 59,
+        "movie_name" : "Heart Like a Wheel",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 11935
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425de"),
+        "id" : 61,
+        "movie_name" : "Alice (Neco z Alenky)",
+        "movie_genre" : "Animation|Fantasy|Mystery",
+        "production_year" : 2005,
+        "budget" : 15745
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425e4"),
+        "id" : 67,
+        "movie_name" : "Moon Warriors, The (Zhan shen chuan shuo)",
+        "movie_genre" : "Action|Adventure",
+        "production_year" : 2007,
+        "budget" : 13634
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425e7"),
+        "id" : 70,
+        "movie_name" : "Clapham Junction",
+        "movie_genre" : "Drama",
+        "production_year" : 2006,
+        "budget" : 17945
+}
+Type "it" for more
+***************************************************************************************************
+
+> db.movies.find().sort({production_year:-1, movie_name:-1}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b442740"),
+        "id" : 415,
+        "movie_name" : "Where Is the Friend's Home? (Where Is My Friend's House?) (Khane-ye doust kodjast?)",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 12015
+}
+{
+        "_id" : ObjectId("619ce428189328025b442667"),
+        "id" : 198,
+        "movie_name" : "The Squeeze",
+        "movie_genre" : "Action|Comedy|Crime|Romance|Thriller",
+        "production_year" : 2020,
+        "budget" : 13063
+}
+{
+        "_id" : ObjectId("619ce428189328025b442710"),
+        "id" : 367,
+        "movie_name" : "Monk and the Fish, The (Le moine et le poisson)",
+        "movie_genre" : "Animation|Musical",
+        "production_year" : 2020,
+        "budget" : 18512
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425e2"),
+        "id" : 65,
+        "movie_name" : "Love in the Time of Hysteria (Sólo con tu pareja)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2020,
+        "budget" : 11806
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425d2"),
+        "id" : 49,
+        "movie_name" : "Everything Relative",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 15208
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426ce"),
+        "id" : 301,
+        "movie_name" : "Everybody Wants to Be Italian",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2020,
+        "budget" : 10777
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426c7"),
+        "id" : 294,
+        "movie_name" : "Déjà Vu",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2020,
+        "budget" : 11365
+}
+{
+        "_id" : ObjectId("619ce428189328025b44261a"),
+        "id" : 121,
+        "movie_name" : "Dark Truth, A (Truth, The)",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2020,
+        "budget" : 11532
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425d7"),
+        "id" : 54,
+        "movie_name" : "Centre Stage: Turn It Up",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2020,
+        "budget" : 9609
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426db"),
+        "id" : 314,
+        "movie_name" : "Bridge to Nowhere, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2020,
+        "budget" : 14586
+}
+{
+        "_id" : ObjectId("619ce428189328025b44267f"),
+        "id" : 222,
+        "movie_name" : "Blood Shot",
+        "movie_genre" : "Action|Comedy|Horror",
+        "production_year" : 2020,
+        "budget" : 16683
+}
+{
+        "_id" : ObjectId("619ce428189328025b44267c"),
+        "id" : 219,
+        "movie_name" : "Veronica Guerin",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2019,
+        "budget" : 11967
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426cb"),
+        "id" : 298,
+        "movie_name" : "Undefeated",
+        "movie_genre" : "Documentary",
+        "production_year" : 2019,
+        "budget" : 19546
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426bb"),
+        "id" : 282,
+        "movie_name" : "The Grump",
+        "movie_genre" : "Comedy",
+        "production_year" : 2019,
+        "budget" : 13714
+}
+{
+        "_id" : ObjectId("619ce428189328025b44270b"),
+        "id" : 362,
+        "movie_name" : "Sweet Home",
+        "movie_genre" : "Horror",
+        "production_year" : 2019,
+        "budget" : 18839
+}
+{
+        "_id" : ObjectId("619ce428189328025b442688"),
+        "id" : 231,
+        "movie_name" : "Pool of London",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2019,
+        "budget" : 12365
+}
+{
+        "_id" : ObjectId("619ce428189328025b44264e"),
+        "id" : 173,
+        "movie_name" : "Mrs. Brown (a.k.a. Her Majesty, Mrs. Brown)",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2019,
+        "budget" : 10747
+}
+{
+        "_id" : ObjectId("619ce428189328025b44261f"),
+        "id" : 126,
+        "movie_name" : "Mechanic, The",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2019,
+        "budget" : 16637
+}
+{
+        "_id" : ObjectId("619ce428189328025b442704"),
+        "id" : 355,
+        "movie_name" : "Kings & Queen (Rois et reine)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2019,
+        "budget" : 15867
+}
+{
+        "_id" : ObjectId("619ce428189328025b44276c"),
+        "id" : 459,
+        "movie_name" : "Heartbeat",
+        "movie_genre" : "Comedy",
+        "production_year" : 2019,
+        "budget" : 16114
+}
+Type "it" for more
+***************************************************************************************************
+
+> db.movies.find().sort({production_year:-1, movie_name:-1}).skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b44267f"),
+        "id" : 222,
+        "movie_name" : "Blood Shot",
+        "movie_genre" : "Action|Comedy|Horror",
+        "production_year" : 2020,
+        "budget" : 16683
+}
+{
+        "_id" : ObjectId("619ce428189328025b44267c"),
+        "id" : 219,
+        "movie_name" : "Veronica Guerin",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2019,
+        "budget" : 11967
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426cb"),
+        "id" : 298,
+        "movie_name" : "Undefeated",
+        "movie_genre" : "Documentary",
+        "production_year" : 2019,
+        "budget" : 19546
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426bb"),
+        "id" : 282,
+        "movie_name" : "The Grump",
+        "movie_genre" : "Comedy",
+        "production_year" : 2019,
+        "budget" : 13714
+}
+{
+        "_id" : ObjectId("619ce428189328025b44270b"),
+        "id" : 362,
+        "movie_name" : "Sweet Home",
+        "movie_genre" : "Horror",
+        "production_year" : 2019,
+        "budget" : 18839
+}
+***************************************************************************************************
+
+> db.movies.find({$nor : [{production_year : {$gt : 2000}}, {budget : {$gt : 10000}}]}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425bd"),
+        "id" : 28,
+        "movie_name" : "Destination Moon",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 9526
+}
+{
+        "_id" : ObjectId("619ce428189328025b44260e"),
+        "id" : 109,
+        "movie_name" : "Third Miracle, The",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 9578
+}
+{
+        "_id" : ObjectId("619ce428189328025b442636"),
+        "id" : 149,
+        "movie_name" : "Galaxy Express 999 (Ginga tetsudô Three-Nine)",
+        "movie_genre" : "Adventure|Animation|Fantasy|Sci-Fi",
+        "production_year" : 1999,
+        "budget" : 9819
+}
+{
+        "_id" : ObjectId("619ce428189328025b44266a"),
+        "id" : 201,
+        "movie_name" : "Land, The (Al-ard)",
+        "movie_genre" : "Drama",
+        "production_year" : 1995,
+        "budget" : 9596
+}
+{
+        "_id" : ObjectId("619ce428189328025b44267a"),
+        "id" : 217,
+        "movie_name" : "Manufacturing Consent: Noam Chomsky and the Media",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 1997,
+        "budget" : 9297
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426ab"),
+        "id" : 266,
+        "movie_name" : "Bad News Bears, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 1993,
+        "budget" : 9389
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426ca"),
+        "id" : 297,
+        "movie_name" : "Sense and Sensibility",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1991,
+        "budget" : 9781
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426e9"),
+        "id" : 328,
+        "movie_name" : "Jodorowsky's Dune",
+        "movie_genre" : "Documentary|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 9169
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426eb"),
+        "id" : 330,
+        "movie_name" : "Easy Rider",
+        "movie_genre" : "Adventure|Drama",
+        "production_year" : 1996,
+        "budget" : 9227
+}
+{
+        "_id" : ObjectId("619ce428189328025b4426f1"),
+        "id" : 336,
+        "movie_name" : "Attack of the 50 Ft. Woman",
+        "movie_genre" : "Comedy|Sci-Fi",
+        "production_year" : 1995,
+        "budget" : 9423
+}
+{
+        "_id" : ObjectId("619ce428189328025b442720"),
+        "id" : 383,
+        "movie_name" : "Tsunami: Caught on Camera",
+        "movie_genre" : "Documentary",
+        "production_year" : 1999,
+        "budget" : 9643
+}
+{
+        "_id" : ObjectId("619ce428189328025b442789"),
+        "id" : 488,
+        "movie_name" : "Little Dorrit",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 9974
+}
+***************************************************************************************************
+
+> db.movies.find({$or : [{production_year : {$ne : 2000}},{budget : {$ne : 10000}}]}).pretty()
+{
+        "_id" : ObjectId("619ce428189328025b4425a2"),
+        "id" : 1,
+        "movie_name" : "Vivacious Lady",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 12609
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a3"),
+        "id" : 2,
+        "movie_name" : "Fever",
+        "movie_genre" : "Thriller",
+        "production_year" : 2019,
+        "budget" : 11114
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a4"),
+        "id" : 3,
+        "movie_name" : "Last Run, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2016,
+        "budget" : 14924
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a5"),
+        "id" : 4,
+        "movie_name" : "Before the Fall (NaPolA - Elite für den Führer)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2012,
+        "budget" : 18305
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a6"),
+        "id" : 5,
+        "movie_name" : "Guerrilla: The Taking of Patty Hearst",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 19675
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a7"),
+        "id" : 6,
+        "movie_name" : "Latin Music USA",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 1996,
+        "budget" : 13198
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a8"),
+        "id" : 7,
+        "movie_name" : "Hot Millions",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 15322
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425a9"),
+        "id" : 8,
+        "movie_name" : "Hundred and One Nights, A (Cent et une nuits de Simon Cinéma, Les)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 13080
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425aa"),
+        "id" : 9,
+        "movie_name" : "Monsieur Vincent",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 9110
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ab"),
+        "id" : 10,
+        "movie_name" : "Superman and the Mole-Men",
+        "movie_genre" : "Children|Mystery|Sci-Fi",
+        "production_year" : 2011,
+        "budget" : 12147
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ac"),
+        "id" : 11,
+        "movie_name" : "Public Housing",
+        "movie_genre" : "Documentary",
+        "production_year" : 1991,
+        "budget" : 13333
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ad"),
+        "id" : 12,
+        "movie_name" : "Submarine",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 1997,
+        "budget" : 14053
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425ae"),
+        "id" : 13,
+        "movie_name" : "Jesse Stone: Stone Cold",
+        "movie_genre" : "Crime|Drama|Mystery",
+        "production_year" : 1994,
+        "budget" : 13462
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425af"),
+        "id" : 14,
+        "movie_name" : "Love and a Bullet",
+        "movie_genre" : "Action|Crime",
+        "production_year" : 2018,
+        "budget" : 11066
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b0"),
+        "id" : 15,
+        "movie_name" : "Critical Care",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 17892
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b1"),
+        "id" : 16,
+        "movie_name" : "Solas",
+        "movie_genre" : "Drama",
+        "production_year" : 1991,
+        "budget" : 12670
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b2"),
+        "id" : 17,
+        "movie_name" : "King of California",
+        "movie_genre" : "Comedy",
+        "production_year" : 2015,
+        "budget" : 18016
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b3"),
+        "id" : 18,
+        "movie_name" : "1981",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 9047
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b4"),
+        "id" : 19,
+        "movie_name" : "Up!",
+        "movie_genre" : "Comedy",
+        "production_year" : 1990,
+        "budget" : 15460
+}
+{
+        "_id" : ObjectId("619ce428189328025b4425b5"),
+        "id" : 20,
+        "movie_name" : "Hero",
+        "movie_genre" : "Drama",
+        "production_year" : 1991,
+        "budget" : 19144
+}
+Type "it" for more
+***************************************************************************************************
+
